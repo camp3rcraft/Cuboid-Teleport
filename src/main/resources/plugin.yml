@@ -1,0 +1,106 @@
+name: CuboidTeleport
+version: 1.2.1
+main: org.camp3r.cuboidteleport.CuboidTeleport
+api-version: '1.16'
+commands:
+  sethome:
+    description: Set a home location.
+    permission: ctp.sethome
+  home:
+    description: Teleport to a home location.
+    permission: ctp.home
+  delhome:
+    description: Delete a home location.
+    permission: ctp.delhome
+  ctp:
+    description: Reload the plugin configuration or display help.
+    usage: /<command> <reload|help>
+    aliases: [cuboidteleport]
+  tpa:
+    description: Send a teleport request to a player.
+    permission: ctp.tpa
+  call:
+    description: Send a teleport request to a player.
+    permission: ctp.call
+  tpaccept:
+    description: Accept a teleport request.
+    permission: ctp.tpaccept
+  tpacancel:
+    description: Cancel a teleport request.
+    permission: ctp.tpacancel
+  tpdeny:
+    description: Deny a teleport request.
+    permission: ctp.tpdeny
+  rtp:
+    description: Teleport to a random location within a radius.
+    usage: /rtp
+    permission: ctp.rtp
+  tpr:
+    description: Teleport to a random location within a radius.
+    usage: /tpr
+    permission: ctp.tpr
+  setwarp:
+    description: Set a warp point.
+    usage: /setwarp <name>
+    permission: ctp.setwarp
+  warp:
+    description: Teleport to a warp point.
+    usage: /warp <name>
+    permission: ctp.warp
+  delwarp:
+    description: Delete a warp point.
+    usage: /delwarp <name>
+    permission: ctp.delwarp
+  warps:
+    description: List all available warps.
+    usage: /warps
+    permission: ctp.warps
+permissions:
+  ctp.sethome:
+    description: Allows the player to set home locations.
+    default: true
+  ctp.home:
+    description: Allows the player to teleport to home locations.
+    default: true
+  ctp.delhome:
+    description: Allows the player to delete home locations.
+    default: true
+  ctp.reload:
+    description: Allows the player to reload the plugin configuration.
+    default: op
+  ctp.help:
+    description: Allows the player to view the help message.
+    default: true
+  ctp.tpa:
+    description: Allows the player to send teleport requests.
+    default: true
+  ctp.call:
+    description: Allows the player to send teleport requests.
+    default: true
+  ctp.tpaccept:
+    description: Allows the player to accept teleport requests.
+    default: true
+  ctp.tpacancel:
+    description: Allows the player to cancel teleport requests.
+    default: true
+  ctp.tpdeny:
+    description: Allows the player to deny teleport requests.
+    default: true
+  ctp.rtp:
+    description: Allows a player to teleport to a random location.
+    default: true
+  ctp.tpr:
+    description: Allows a player to teleport to a random location.
+    default: true
+  ctp.setwarp:
+    description: Allows a player to set a warp point.
+    default: op
+  ctp.warp:
+    description: Allows a player to teleport to a warp point.
+    default: true
+  ctp.delwarp:
+    description: Allows a player to delete a warp point.
+    default: op
+  ctp.warps:
+    description: Allows a player to list all available warps.
+    default: true

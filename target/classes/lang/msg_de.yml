@@ -1,0 +1,27 @@
+#
+# CuboidTeleport
+# v1.2
+# by camper_crafting
+# Deutsche Plugin-Sprache
+#
+only_players: "&#ff0000Dieser Befehl ist nur für Spieler verfügbar!&r"
+usage_call: "&#ff0000Usage: &n/call [player]&r"
+player_not_found: "&#ff0000Spieler nicht gefunden.&r"
+usage_tpa: "&#ff0000Usage: /tpa [player]&r"
+no_self_request: "&#ff0000Du kannst keine Teleportanfrage an dich selbst senden.&r"
+home_set: "&#15ff00Der Heimatpunkt %home% ist festgelegt!&r"
+home_teleported: "&#15ff00Zum Heimatpunkt %home% teleportieren!&r"
+home_removed: "&#ff0000Der Heimatpunkt %home% wurde entfernt!&r"
+home_not_exist: "&#ff0000Der Heimatpunkt %home% existiert nicht!&r"
+config_reloaded: "&#15ff00Konfiguration erfolgreich neu geladen!&r"
+help_message: "&#4385FFcommands:&r\n&#4385FF/ctp help &7- &#6000FFshow this message&r\n&#4385FF/ctp reload &7- &#6000FF reload Konfiguration&r\n&#4385FF/sethome [name] &7- &#6000FFset home point&r\n&#4385FF/home [name] &7- &#6000FFzum Heimatpunkt teleportieren&r\n&#4385FF/delhome [name] &7- &#6000FFHeimpunkt löschen&r\n&#4385FF/tpa [player] &7- &#6000FFTeleportationsanfrage an Spieler senden&r\n&#4385FF/call [player] &7- &#6000FFsende Teleportationsanfrage an Spieler&r\n&#4385FF/tpaccept &7- &#6000FFakzeptiere Teleportationsanfrage&r\n&#4385FF/tpaccancel &7- &#6000FFlehne Teleportationsanfrage ab&r\n&#4385FF/tpdeny &7- &#6000FFTeleportationsanfrage abbrechen&r"
+no_permission: "&#ff0000Unzureichende Berechtigungen.&r"
+request_sent: "&#15ff00Hat eine Teleportationsanfrage an %target% gesendet.&r"
+request_received: "&#6000FF%sender%&r &#4385FFmöchte zu dir teleportieren.&r\n&#4385FFGeben Sie &#15ff00/taccept&r &#4385FF ein, um zu akzeptieren, oder &#ff0000/tpacancel&r &#4385FF, um abzulehnen.&r"
+request_timed_out: "&#ff0000Zeitüberschreitung der Teleport-Anfrage.&r"
+request_accepted: "&#15ff00Teleportationsanfrage angenommen.&r"
+request_denied: "&#ff0000Teleportationsanfrage abgelehnt.&r"
+no_pending_request: "&#ff0000Sie haben keine ausstehenden Teleportanfragen.&r"
+request_pending: "&#ff0000Sie haben bereits eine ausstehende Teleportanfrage.&r"
+sender_offline: "&#ff0000Der Spieler, der die Anfrage gesendet hat, ist nicht mehr online.&r"
+request_cancelled: "&#ff0000Die Teleportationsanfrage von %sender% wurde abgebrochen.&r"
