@@ -26,28 +26,46 @@
 
 **⚙️config.yml preview:**
 ```
-#
-# CuboidTeleport
-# v1.2
-# by camper_crafting
-#
-locale: en
-message_prefix: "&#6000FF&lC&#5E0AFF&lu&#5C14FF&lb&#591FFF&lo&#5729FF&li&#5533FF&ld&#533DFF&lT&#5048FF&le&#4E52FF&ll&#4C5CFF&le&#4A66FF&lp&#4771FF&lo&#457BFF&lr&#4385FF&lt&r &7|&r "
+#                                                                      #
+# ▒█▀▀█ █░░█ █▀▀▄ █▀▀█ ░▀░ █▀▀▄ ▀▀█▀▀ █▀▀ █░░ █▀▀ █▀▀█ █▀▀█ █▀▀█ ▀▀█▀▀ #
+# ▒█░░░ █░░█ █▀▀▄ █░░█ ▀█▀ █░░█ ░▒█░░ █▀▀ █░░ █▀▀ █░░█ █░░█ █▄▄▀ ░░█░░ #
+# ▒█▄▄█ ░▀▀▀ ▀▀▀░ ▀▀▀▀ ▀▀▀ ▀▀▀░ ░▒█░░ ▀▀▀ ▀▀▀ ▀▀▀ █▀▀▀ ▀▀▀▀ ▀░▀▀ ░░▀░░ #
+#                               v1.2.1                                 #
+#                         by camper_crafting                           #
+#                                                                      #
 
-# Teleport settings
+# Main settings of plugin
+locale: ru
+message_prefix: "&#6000FF&lC&#5E0AFF&lu&#5C14FF&lb&#591FFF&lo&#5729FF&li&#5533FF&ld&#533DFF&lT&#5048FF&le&#4E52FF&ll&#4C5CFF&le&#4A66FF&lp&#4771FF&lo&#457BFF&lr&#4385FF&lt&r &7|&r "
+general_sound: ENTITY_FISHING_BOBBER_THROW
+
+
+# Home settings
+home_sound: ENTITY_ENDERMAN_TELEPORT
+
+# Warp settings
+warp_sound: ENTITY_ENDERMAN_TELEPORT
+
+# RTP settings
+rtp_sound: ENTITY_ENDERMAN_TELEPORT
 teleport_radius: 1000 # RTP radius
+
+# Tpa settings
+tpa_sound: ENTITY_ENDERMAN_TELEPORT
 ```
 
 ### **🌈How to create gradient - https://www.birdflop.com/resources/rgb/**
 
 **🇬🇧msg_en.yml preview:**
 ```
-#
-# CuboidTeleport
-# v1.2
-# by camper_crafting
-# English language plugin
-#
+#                                                                      #
+# ▒█▀▀█ █░░█ █▀▀▄ █▀▀█ ░▀░ █▀▀▄ ▀▀█▀▀ █▀▀ █░░ █▀▀ █▀▀█ █▀▀█ █▀▀█ ▀▀█▀▀ #
+# ▒█░░░ █░░█ █▀▀▄ █░░█ ▀█▀ █░░█ ░▒█░░ █▀▀ █░░ █▀▀ █░░█ █░░█ █▄▄▀ ░░█░░ #
+# ▒█▄▄█ ░▀▀▀ ▀▀▀░ ▀▀▀▀ ▀▀▀ ▀▀▀░ ░▒█░░ ▀▀▀ ▀▀▀ ▀▀▀ █▀▀▀ ▀▀▀▀ ▀░▀▀ ░░▀░░ #
+#                               v1.2.1                                 #
+#                         by camper_crafting                           #
+#                       English language plugin                        #
+#                                                                      #
 only_players: "&#ff0000Only players can use this command!&r"
 usage_call: "&#ff0000Usage: &n/call [player]&r"
 player_not_found: "&#ff0000Player not found.&r"
