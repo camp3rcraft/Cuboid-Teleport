@@ -138,3 +138,5 @@ no_warps: "&#ff0000No warps have been set yet.&r"
 - `/tpauto` - auto accepting requests
 - `/tpahereall` - request to teleport everyone to you
 - `/tpatoggle [name]` - toggle requests from player. Without name - toggle requests from all
+- `/back` - back to your death location. With nickname - teleport player to his death location
+- `/homes [name]` - show homes of player. Without name - show your homes
