@@ -140,3 +140,17 @@ no_warps: "&#ff0000No warps have been set yet.&r"
 - `/tpatoggle [name]` - toggle requests from player. Without name - toggle requests from all
 - `/back` - back to your death location. With nickname - teleport player to his death location
 - `/homes [name]` - show homes of player. Without name - show your homes
+- Safe teleports for warps and homes
+- `/warppass <set, del, show> [warp] [password] [repeat password]` - setup a password for warp
+- Tab completes for warps and homes
+- `/warptop` - top 5 warps (visitors)
+- Visitors counts in `/warps`
+- `/warpwelcome [warp] [welcome message]` - set welcome message for warp
+- `/warpowner [warp] [name]` - transfer ownership of the warp to another player
+- `/warpinfo [warp]` - show info about warp: ownet, visitors count, coordinates and world, create data
+- Respawn players on the oldest home
+- `/homeinfo [home]` - show info about home: teleports counts, create data, owners
+- `/homeowner <add, del, show> [home] [name]` - add owner to home
+- `/setspawn` - set spawn on server
+- `/delspawn` - delete spawn on server
+- `/spawn` - teleport to spawn
