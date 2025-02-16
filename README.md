@@ -118,4 +118,18 @@ no_warps: "&#ff0000No warps have been set yet.&r"
 ```
 
 **📃TODO list:**
-- More customizable `config.yml`
+- Wikipedia for plugin
+- Cooldown for every teleport
+- (RTP) Teleport on first join
+- (RTP) Teleport on join
+- (RTP) World list
+- (RTP) Block blacklist
+- (RTP) Creating NPCs "Explorer"
+- (RTP) Teleport cost
+- (RTP) Variable and customizable RTP levels (example: 500, 1000 and 2000 blocks) and custom permission for every level
+- (RTP) Max. and min. coordinates
+- (RTP) Individual options for every world
+- (RTP) Max. time for search safe location
+- (RTP) Anti-Region teleport
+- (RTP) Effects, titles and bossbar
+- (RTP) Boolean dependencies
