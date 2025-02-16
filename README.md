@@ -131,5 +131,10 @@ no_warps: "&#ff0000No warps have been set yet.&r"
 - (RTP) Individual options for every world
 - (RTP) Max. time for search safe location
 - (RTP) Anti-Region teleport
-- (RTP) Effects, titles and bossbar
+- Effects, titles and bossbar
 - (RTP) Boolean dependencies
+- `/tpahere [name]` - send a request to teleport to yourself
+- `/tpaignore [name]` - ignore requests from player
+- `/tpauto` - auto accepting requests
+- `/tpahereall` - request to teleport everyone to you
+- `/tpatoggle [name]` - toggle requests from player. Without name - toggle requests from all
