@@ -121,7 +121,7 @@ no_warps: "&#ff0000No warps have been set yet.&r"
 - ✅ - *ready, not released*
 - ✅✅ - *ready, released*
 
-
+____
 
 - ✅`/setspawn` - set spawn on server
 - ✅`/delspawn` - delete spawn on server
