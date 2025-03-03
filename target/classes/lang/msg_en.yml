@@ -2,7 +2,7 @@
 # ▒█▀▀█ █░░█ █▀▀▄ █▀▀█ ░▀░ █▀▀▄ ▀▀█▀▀ █▀▀ █░░ █▀▀ █▀▀█ █▀▀█ █▀▀█ ▀▀█▀▀ #
 # ▒█░░░ █░░█ █▀▀▄ █░░█ ▀█▀ █░░█ ░▒█░░ █▀▀ █░░ █▀▀ █░░█ █░░█ █▄▄▀ ░░█░░ #
 # ▒█▄▄█ ░▀▀▀ ▀▀▀░ ▀▀▀▀ ▀▀▀ ▀▀▀░ ░▒█░░ ▀▀▀ ▀▀▀ ▀▀▀ █▀▀▀ ▀▀▀▀ ▀░▀▀ ░░▀░░ #
-#                                v1.2.1                                #
+#                               v2.0.0                                 #
 #                         by camper_crafting                           #
 #                       English language plugin                        #
 #                                                                      #
@@ -16,7 +16,7 @@ home_teleported: "&#15ff00Teleported to home %home%!&r"
 home_removed: "&#ff0000Home %home% removed!&r"
 home_not_exist: "&#ff0000Home %home% does not exist!&r" ### Placeholder не работает, просто %home% выводит
 config_reloaded: "&#15ff00Configuration reloaded successfully!&r"
-help_message: "&#4385FFcommands:&r\n
+help_message: "&#4385FFVersion &#6000FFv2.0.0&7. &#4385FFCommand list:&r\n
 &#4385FF/ctp help &7- &#6000FFshow corresponding message&r\n
 &#4385FF/ctp reload &7- &#6000FFreload configuration&r\n
 &#4385FF/sethome [name] &7- &#6000FFset home point&r\n
@@ -29,10 +29,15 @@ help_message: "&#4385FFcommands:&r\n
 &#4385FF/tpdeny &7- &#6000FFcancel teleportation request&r\n
 &#4385FF/rtp &7- &#6000FFrandom teleport&r\n
 &#4385FF/tpr &7- &#6000FFrandom teleport&r\n
-&#4385FF/warp &7- &#6000FFteleport to warp&r\n
+&#4385FF/warp [name] &7- &#6000FFteleport to warp&r\n
 &#4385FF/warps &7- &#6000FFwarp list&r\n
-&#4385FF/setwarp &7- &#6000FFset warp&r\n
-&#4385FF/delwarp &7- &#6000FFdelete warp&r"
+&#4385FF/setwarp [name] &7- &#6000FFset warp&r\n
+&#4385FF/delwarp [name] &7- &#6000FFdelete warp&r\n
+&#4385FF/spawn &7- &#6000FFteleport to spawn&r\n
+&#4385FF/setspawn &7- &#6000FFset spawn&r\n
+&#4385FF/delspawn &7- &#6000FFdelete spawn&r\n
+\n&aModrinth - &#4385FF&nhttps://modrinth.com/plugin/cuboidteleport&r\n
+&7GitHub - &#4385FF&nhttps://github.com/camp3rcraft/Cuboid-Teleport&r"
 no_permission: "&#ff0000You don't have permission to use this command!&r"
 request_sent: "&#15ff00Teleport request sent to %target%.&r"
 request_received: "&#6000FF%sender%&r &#4385FFhas requested to teleport to you.&r\n&#4385FFType &#15ff00/tpaccept&r &#4385FFto accept or &#ff0000/tpacancel&r &#4385FFto deny.&r"
@@ -55,3 +60,6 @@ usage_warp: "&#ff0000Usage: &n/warp [name]&r"
 usage_delwarp: "&#ff0000Usage: &n/delwarp [name]&r"
 warps_list: "&#4385FFAvailable warps: &#6000FF&n%warps%&r"
 no_warps: "&#ff0000No warps have been set yet.&r"
+cooldown_active: "&#ff0000You can use %command% in %time% seconds."
+no_permission_home: "&#ff0000You do not own this home!"
+no_permission_warp: "&#ff0000You do not own this warp!"

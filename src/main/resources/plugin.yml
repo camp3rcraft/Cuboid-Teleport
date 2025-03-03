@@ -1,5 +1,5 @@
 name: CuboidTeleport
-version: 1.2.1
+version: 2.0.0
 main: org.camp3r.cuboidteleport.CuboidTeleport
 api-version: '1.16'
 commands:
@@ -55,6 +55,18 @@ commands:
     description: List all available warps.
     usage: /warps
     permission: ctp.warps
+  spawn:
+    description: Teleport to spawn
+    usage: /spawn
+    permission: ctp.spawn
+  setspawn:
+    description: Set the spawn location
+    usage: /setspawn
+    permission: ctp.setspawn
+  delspawn:
+    description: Delete the spawn location
+    usage: /delspawn
+    permission: ctp.delspawn
 permissions:
   ctp.sethome:
     description: Allows the player to set home locations.
@@ -104,3 +116,12 @@ permissions:
   ctp.warps:
     description: Allows a player to list all available warps.
     default: true
+  ctp.spawn:
+    description: Allows a player to teleport to spawn
+    default: true
+  ctp.setspawn:
+    description: Allows setting spawn
+    default: op
+  ctp.delspawn:
+    description: Allows deleting spawn
+    default: op

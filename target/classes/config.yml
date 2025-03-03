@@ -2,7 +2,7 @@
 # ▒█▀▀█ █░░█ █▀▀▄ █▀▀█ ░▀░ █▀▀▄ ▀▀█▀▀ █▀▀ █░░ █▀▀ █▀▀█ █▀▀█ █▀▀█ ▀▀█▀▀ #
 # ▒█░░░ █░░█ █▀▀▄ █░░█ ▀█▀ █░░█ ░▒█░░ █▀▀ █░░ █▀▀ █░░█ █░░█ █▄▄▀ ░░█░░ #
 # ▒█▄▄█ ░▀▀▀ ▀▀▀░ ▀▀▀▀ ▀▀▀ ▀▀▀░ ░▒█░░ ▀▀▀ ▀▀▀ ▀▀▀ █▀▀▀ ▀▀▀▀ ▀░▀▀ ░░▀░░ #
-#                               v1.2.1                                 #
+#                               v2.0.0                                 #
 #                         by camper_crafting                           #
 #                                                                      #
 
@@ -24,3 +24,13 @@ teleport_radius: 1000 # RTP radius
 
 # Tpa settings
 tpa_sound: ENTITY_ENDERMAN_TELEPORT
+
+# Other commands settings
+cooldowns:
+  call: 30      # 30 seconds
+  tpa: 30       # 30 seconds
+  home: 5       # 5 seconds
+  rtp: 60       # 60 seconds
+  warp: 10      # 10 seconds
+  sethome: 5    # 5 seconds
+  setwarp: 5    # 5 seconds

@@ -8,15 +8,18 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.camp3r.cuboidteleport.utils.ColorUtil;
+import org.camp3r.cuboidteleport.utils.CooldownManager;
 
 public class TpaCommand implements CommandExecutor {
 
     private final TeleportManager teleportManager;
     private final LocalizationManager localizationManager;
+    private final CooldownManager cooldownManager;
 
-    public TpaCommand(TeleportManager teleportManager, LocalizationManager localizationManager) {
+    public TpaCommand(TeleportManager teleportManager, LocalizationManager localizationManager, CooldownManager cooldownManager) {
         this.teleportManager = teleportManager;
         this.localizationManager = localizationManager;
+        this.cooldownManager = cooldownManager;
     }
 
     @Override
@@ -27,6 +30,13 @@ public class TpaCommand implements CommandExecutor {
         }
 
         Player player = (Player) sender;
+
+        if (cooldownManager.isOnCooldown(player, "tpa")) {
+            long timeLeft = cooldownManager.getCooldownTimeLeft(player, "tpa");
+            player.sendMessage(localizationManager.getMessage("cooldown_active", "command", "/tpa", "time", String.valueOf(timeLeft)));
+            return true;
+        }
+
 
         if (args.length != 1) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("usage_tpa")));

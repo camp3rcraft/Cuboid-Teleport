@@ -1,6 +1,7 @@
 package org.camp3r.cuboidteleport.commands;
 
 import org.camp3r.cuboidteleport.CuboidTeleport;
+import org.camp3r.cuboidteleport.utils.CooldownManager;
 import org.camp3r.cuboidteleport.warp.WarpManager;
 import org.camp3r.cuboidteleport.homesystem.LocalizationManager;
 import org.camp3r.cuboidteleport.utils.ColorUtil;
@@ -15,11 +16,13 @@ public class WarpCommand implements CommandExecutor {
 
     private final WarpManager warpManager;
     private final LocalizationManager localizationManager;
+    private final CooldownManager cooldownManager;
     private final CuboidTeleport plugin;
 
-    public WarpCommand(WarpManager warpManager, LocalizationManager localizationManager, CuboidTeleport plugin) {
+    public WarpCommand(WarpManager warpManager, LocalizationManager localizationManager, CooldownManager cooldownManager, CuboidTeleport plugin) {
         this.warpManager = warpManager;
         this.localizationManager = localizationManager;
+        this.cooldownManager = cooldownManager;
         this.plugin = plugin;
     }
 
@@ -31,6 +34,12 @@ public class WarpCommand implements CommandExecutor {
         }
 
         Player player = (Player) sender;
+
+        if (cooldownManager.isOnCooldown(player, "warp")) {
+            long timeLeft = cooldownManager.getCooldownTimeLeft(player, "warp");
+            player.sendMessage(localizationManager.getMessage("cooldown_active", "command", "/warp", "time", String.valueOf(timeLeft)));
+            return true;
+        }
 
         if (!player.hasPermission("ctp.warp")) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("no_permission")));
@@ -54,6 +63,7 @@ public class WarpCommand implements CommandExecutor {
         }
 
         player.teleport(location);
+        cooldownManager.setCooldown(player, "warp");
 
         // Воспроизведение звука после телепортации
         String soundName = plugin.getConfig().getString("warp_sound", "ENTITY_ENDERMAN_TELEPORT");

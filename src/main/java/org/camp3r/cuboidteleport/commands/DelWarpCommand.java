@@ -41,6 +41,13 @@ public class DelWarpCommand implements CommandExecutor {
 
         String warpName = args[0];
 
+        if (!warpManager.isOwner(player, warpName) && !player.hasPermission("ctp.admin")) {
+            player.sendMessage(localizationManager.getMessage("no_permission_warp"));
+            return true;
+        }
+
+        boolean deleted = warpManager.deleteWarp(warpName);
+
         if (warpManager.deleteWarp(warpName)) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("warp_deleted", "warp", warpName)));
             localizationManager.playSound(player, "general_sound");

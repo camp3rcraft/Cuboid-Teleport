@@ -3,6 +3,7 @@ package org.camp3r.cuboidteleport.commands;
 import org.camp3r.cuboidteleport.CuboidTeleport;
 import org.camp3r.cuboidteleport.homesystem.HomeSystem;
 import org.camp3r.cuboidteleport.homesystem.LocalizationManager;
+import org.camp3r.cuboidteleport.utils.CooldownManager;
 import org.camp3r.cuboidteleport.utils.ColorUtil;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -15,11 +16,13 @@ public class HomeCommand implements CommandExecutor {
 
     private final HomeSystem homeSystem;
     private final LocalizationManager localizationManager;
+    private final CooldownManager cooldownManager;
     private final CuboidTeleport plugin;
 
-    public HomeCommand(HomeSystem homeSystem, LocalizationManager localizationManager, CuboidTeleport plugin) {
+    public HomeCommand(HomeSystem homeSystem, LocalizationManager localizationManager, CooldownManager cooldownManager, CuboidTeleport plugin) {
         this.homeSystem = homeSystem;
         this.localizationManager = localizationManager;
+        this.cooldownManager = cooldownManager;
         this.plugin = plugin;
     }
 
@@ -32,17 +35,23 @@ public class HomeCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
+        if (cooldownManager.isOnCooldown(player, "home")) {
+            long timeLeft = cooldownManager.getCooldownTimeLeft(player, "home");
+            player.sendMessage(localizationManager.getMessage("cooldown_active", "command", "/home", "time", String.valueOf(timeLeft)));
+            return true;
+        }
+
         if (!player.hasPermission("ctp.home")) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("no_permission")));
             localizationManager.playSound(player, "general_sound");
             return true;
         }
 
-        String homeName = args.length > 0 ? args[0] : "default";
+        String homeName = args.length > 0 ? args[0] : "home";
         Location homeLocation = homeSystem.getHome(player, homeName);
 
         if (homeLocation == null) {
-            player.sendMessage(ColorUtil.color(localizationManager.getMessage("home_not_exist", "default", homeName)));
+            player.sendMessage(ColorUtil.color(localizationManager.getMessage("home_not_exist", "%home%", homeName)));
             localizationManager.playSound(player, "general_sound");
             return true;
         }

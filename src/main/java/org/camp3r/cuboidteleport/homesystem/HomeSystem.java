@@ -64,6 +64,10 @@ public class HomeSystem {
         return false;
     }
 
+    public boolean isOwner(Player player, String homeName) {
+        return homesConfig.contains(player.getUniqueId().toString() + "." + homeName);
+    }
+
     public void saveHomes() {
         for (Map.Entry<UUID, Map<String, Location>> entry : homes.entrySet()) {
             UUID playerId = entry.getKey();

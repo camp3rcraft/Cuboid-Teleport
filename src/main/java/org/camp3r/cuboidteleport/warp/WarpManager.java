@@ -2,6 +2,7 @@ package org.camp3r.cuboidteleport.warp;
 
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;
@@ -69,6 +70,12 @@ public class WarpManager {
     public boolean warpExists(String warpName) {
         return warps.containsKey(warpName);
     }
+
+    public boolean isOwner(Player player, String warpName) {
+        String ownerPath = "warps." + warpName + ".owner";
+        return warpsConfig.getString(ownerPath, "").equals(player.getUniqueId().toString());
+    }
+
 
     public Set<String> getWarpNames() {
         return warps.keySet();

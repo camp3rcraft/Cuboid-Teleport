@@ -10,6 +10,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.camp3r.cuboidteleport.utils.CooldownManager;
 
 import java.util.Random;
 
@@ -17,11 +18,13 @@ public class RtpCommand implements CommandExecutor {
 
     private final int radius;
     private final LocalizationManager localizationManager;
+    private final CooldownManager cooldownManager;
     private final CuboidTeleport plugin;
 
-    public RtpCommand(int radius, LocalizationManager localizationManager, CuboidTeleport plugin) {
+    public RtpCommand(int radius, LocalizationManager localizationManager, CooldownManager cooldownManager, CuboidTeleport plugin) {
         this.radius = radius;
         this.localizationManager = localizationManager;
+        this.cooldownManager = cooldownManager;
         this.plugin = plugin;
     }
 
@@ -33,6 +36,12 @@ public class RtpCommand implements CommandExecutor {
         }
 
         Player player = (Player) sender;
+
+        if (cooldownManager.isOnCooldown(player, "rtp")) {
+            long timeLeft = cooldownManager.getCooldownTimeLeft(player, "rtp");
+            player.sendMessage(localizationManager.getMessage("cooldown_active", "command", "/rtp", "time", String.valueOf(timeLeft)));
+            return true;
+        }
 
         if (!player.hasPermission("ctp.rtp")) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("no_permission")));

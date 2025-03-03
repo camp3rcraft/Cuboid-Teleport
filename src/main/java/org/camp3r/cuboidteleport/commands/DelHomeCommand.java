@@ -24,7 +24,14 @@ public class DelHomeCommand implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-        String homeName = (args.length > 0) ? args[0] : "default";
+        String homeName = args[0];
+        if (!homeSystem.isOwner(player, homeName)) {
+            player.sendMessage(localizationManager.getMessage("no_permission_home"));
+            return true;
+        }
+
+        boolean deleted = homeSystem.removeHome(player, homeName);
+
         if (homeSystem.removeHome(player, homeName)) {
             player.sendMessage(localizationManager.getMessage("home_removed", "home", homeName));
             localizationManager.playSound(player, "general_sound");
