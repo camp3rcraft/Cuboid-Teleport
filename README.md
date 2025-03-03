@@ -1,5 +1,9 @@
 [![Description Banner](https://i.ibb.co/7tRvNf1x/banner.png)](https://modrinth.com/plugin/cuboidteleport)
 # **💨A simple plugin that adds teleports**
+## ⚠️Attention server owners!
+A critical bug has been discovered in CuboidTeleport that allows players to delete even warps that are not their own. As for the house points, I don’t know yet whether the bug applies to them as well. Temporarily remove access to `/delwarp` and `/delhome`. Fix coming soon + new functions as compensation
+
+
 **✨Features:**
 - HEX Color support
 - Custom config.yml
@@ -118,8 +122,16 @@ no_warps: "&#ff0000No warps have been set yet.&r"
 ```
 
 **📃TODO list:**
+- ✅ - *ready, not released*
+- ✅✅ - *ready, released*
+
+____
+
+- ✅`/setspawn` - set spawn on server
+- ✅`/delspawn` - delete spawn on server
+- ✅`/spawn` - teleport to spawn
 - Wikipedia for plugin
-- Cooldown for every teleport
+- ✅Cooldown for every teleport
 - (RTP) Teleport on first join
 - (RTP) Teleport on join
 - (RTP) World list
