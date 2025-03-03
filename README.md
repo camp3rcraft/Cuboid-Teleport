@@ -131,7 +131,7 @@ ____
 - ✅`/delspawn` - delete spawn on server
 - ✅`/spawn` - teleport to spawn
 - Wikipedia for plugin
-- Cooldown for every teleport
+- ✅Cooldown for every teleport
 - (RTP) Teleport on first join
 - (RTP) Teleport on join
 - (RTP) World list
