@@ -36,60 +36,71 @@ public class HomeCommand implements CommandExecutor {
         }
 
         Player player = (Player) sender;
-        String homeName = args.length > 0 ? args[0] : "home";
-        Location homeLocation = homeSystem.getHome(player, homeName);
 
-        if (args.length > 0) {
-            homeName = args[0];
-        } else {
-            // Если аргумента нет, пытаемся выбрать дом автоматически
-            List<String> homes = homeSystem.getHomes(player);
-            if (homes.isEmpty()) {
-                player.sendMessage(localizationManager.getMessage("home_not_exist"));
-                return true;
-            } else if (homes.size() == 1) {
-                homeName = homes.get(0); // Если только один дом, выбираем его
-            } else {
-                player.sendMessage(localizationManager.getMessage("home_specify"));
-                return true;
-            }
-        }
-
-        if (!homeSystem.hasHome(player, homeName)) {
-            player.sendMessage(localizationManager.getMessage("home_not_exist", "home", homeName));
+        // Проверяем права на команду
+        if (!player.hasPermission("ctp.home")) {
+            player.sendMessage(ColorUtil.color(localizationManager.getMessage("no_permission")));
             return true;
         }
 
+        // Проверяем кулдаун
         if (cooldownManager.isOnCooldown(player, "home")) {
             long timeLeft = cooldownManager.getCooldownTimeLeft(player, "home");
             player.sendMessage(localizationManager.getMessage("cooldown_active", "command", "/home", "time", String.valueOf(timeLeft)));
             return true;
         }
 
+        // Определяем имя дома
+        String homeName = args.length > 0 ? args[0] : null;
+
+        if (homeName == null) {
+            List<String> homes = homeSystem.getHomes(player);
+            if (homes.isEmpty()) {
+                player.sendMessage(localizationManager.getMessage("home_not_exist", "home", "default"));
+                return true;
+            } else if (homes.size() == 1) {
+                homeName = homes.get(0); // Если у игрока один дом, используем его
+            } else {
+                player.sendMessage(localizationManager.getMessage("home_specify"));
+                return true;
+            }
+        }
+
+        // Проверяем, существует ли дом
+        if (!homeSystem.hasHome(player, homeName)) {
+            player.sendMessage(localizationManager.getMessage("home_not_exist", "home", homeName));
+            return true;
+        }
+
+        // Проверяем, владеет ли игрок этим домом
         if (!homeSystem.isOwner(player, homeName)) {
             player.sendMessage(localizationManager.getMessage("no_permission_home"));
             return true;
         }
 
-        if (!player.hasPermission("ctp.home")) {
-            player.sendMessage(ColorUtil.color(localizationManager.getMessage("no_permission")));
-            localizationManager.playSound(player, "general_sound");
-            return true;
-        }
-
+        // Получаем координаты дома
+        Location homeLocation = homeSystem.getHome(player, homeName);
         if (homeLocation == null) {
-            player.sendMessage(ColorUtil.color(localizationManager.getMessage("home_not_exist", "%home%", homeName)));
-            localizationManager.playSound(player, "general_sound");
+            player.sendMessage(ColorUtil.color(localizationManager.getMessage("home_not_exist", "home", homeName)));
             return true;
         }
 
+        // Телепортируем игрока
         player.teleport(homeLocation);
+        player.sendMessage(localizationManager.getMessage("home_teleported", "home", homeName));
 
+        // Устанавливаем кулдаун
+        cooldownManager.setCooldown(player, "home");
+
+        // Проигрываем звук телепортации
         String soundName = plugin.getConfig().getString("home_sound", "ENTITY_ENDERMAN_TELEPORT");
-        Sound sound = Sound.valueOf(soundName.toUpperCase());
-        player.playSound(player.getLocation(), sound, 1.0F, 1.0F);
+        try {
+            Sound sound = Sound.valueOf(soundName.toUpperCase());
+            player.playSound(player.getLocation(), sound, 1.0F, 1.0F);
+        } catch (IllegalArgumentException e) {
+            player.sendMessage(ColorUtil.color("&cInvalid sound in config: " + soundName));
+        }
 
-        player.sendMessage(ColorUtil.color(localizationManager.getMessage("home_teleported", "home", homeName)));
         return true;
     }
 }

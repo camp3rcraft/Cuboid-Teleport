@@ -1,21 +1,64 @@
-#                                                                      #
-# ▒█▀▀█ █░░█ █▀▀▄ █▀▀█ ░▀░ █▀▀▄ ▀▀█▀▀ █▀▀ █░░ █▀▀ █▀▀█ █▀▀█ █▀▀█ ▀▀█▀▀ #
-# ▒█░░░ █░░█ █▀▀▄ █░░█ ▀█▀ █░░█ ░▒█░░ █▀▀ █░░ █▀▀ █░░█ █░░█ █▄▄▀ ░░█░░ #
-# ▒█▄▄█ ░▀▀▀ ▀▀▀░ ▀▀▀▀ ▀▀▀ ▀▀▀░ ░▒█░░ ▀▀▀ ▀▀▀ ▀▀▀ █▀▀▀ ▀▀▀▀ ▀░▀▀ ░░▀░░ #
-#                               v2.0.0                                 #
-#                         by camper_crafting                           #
-#                       English language plugin                        #
-#                                                                      #
+#
+# ▒█▀▀█ █░░█ █▀▀▄ █▀▀█ ░▀░ █▀▀▄ ▀▀█▀▀ █▀▀ █░░ █▀▀ █▀▀█ █▀▀█ █▀▀█ ▀▀█▀▀
+# ▒█░░░ █░░█ █▀▀▄ █░░█ ▀█▀ █░░█ ░▒█░░ █▀▀ █░░ █▀▀ █░░█ █░░█ █▄▄▀ ░░█░░
+# ▒█▄▄█ ░▀▀▀ ▀▀▀░ ▀▀▀▀ ▀▀▀ ▀▀▀░ ░▒█░░ ▀▀▀ ▀▀▀ ▀▀▀ █▀▀▀ ▀▀▀▀ ▀░▀▀ ░░▀░░
+#                               v2.0.0
+#                         by camper_crafting
+#                       English language plugin
+
+# Plugin messages
+config_reloaded: "&#15ff00Configuration reloaded successfully!&r"
 only_players: "&#ff0000Only players can use this command!&r"
-usage_call: "&#ff0000Usage: &n/call [player]&r"
 player_not_found: "&#ff0000Player not found.&r"
+no_permission: "&#ff0000You don't have permission to use this command!&r"
+cooldown_active: "&#ff0000You can use %command% in %time% seconds."
+
+# /call & /tpa messages
+usage_call: "&#ff0000Usage: &n/call [player]&r"
 usage_tpa: "&#ff0000Usage: &n/tpa [player]&r"
 no_self_request: "&#ff0000You cannot send a teleport request to yourself.&r"
+request_sent: "&#15ff00Teleport request sent to %target%.&r"
+request_received: "&#6000FF%sender%&r &#4385FFhas requested to teleport to you.&r\n&#4385FFType &#15ff00/tpaccept&r &#4385FFto accept or &#ff0000/tpacancel&r &#4385FFto deny.&r"
+request_timed_out: "&#ff0000Teleport request has timed out.&r"
+request_accepted: "&#15ff00Teleport request accepted.&r"
+request_denied: "&#ff0000Teleport request denied.&r"
+no_pending_request: "&#ff0000You have no pending teleport requests.&r"
+request_pending: "&#ff0000You already have a pending teleport request.&r"
+sender_offline: "&#ff0000The player who sent the request is no longer online.&r"
+request_cancelled: "&#ff0000Teleport request from %sender% has been cancelled.&r"
+
+# /home messages
 home_set: "&#15ff00Home %home% set!&r"
 home_teleported: "&#15ff00Teleported to home %home%!&r"
 home_removed: "&#ff0000Home %home% removed!&r"
-home_not_exist: "&#ff0000Home %home% does not exist!&r" ### Placeholder не работает, просто %home% выводит
-config_reloaded: "&#15ff00Configuration reloaded successfully!&r"
+home_not_exist: "&#ff0000Home %home% does not exist!&r"
+home_specify: "&#ff0000You have several points at home. Usage: &n/home [name]&r"
+usage_delhome: "&#ff0000Usage: &n/delhome [name]&r"
+no_permission_home: "&#ff0000You do not own this home!"
+
+# /warp messages
+warp_set: "&#15ff00Warp %warp% has been set.&r"
+warp_teleport: "&#15ff00Teleported to warp %warp%.&r"
+warp_deleted: "&#15ff00Warp %warp% has been deleted.&r"
+warp_not_found: "&#ff0000Warp %warp% not found.&r"
+warp_exists: "&#ff0000Warp %warp% already exists.&r"
+usage_warp: "&#ff0000Usage: &n/warp [name]&r"
+usage_setwarp: "&#ff0000Usage: &n/setwarp [name]&r"
+usage_delwarp: "&#ff0000Usage: &n/delwarp [name]&r"
+warps_list: "&#4385FFAvailable warps: &#6000FF&n%warps%&r"
+no_warps: "&#ff0000No warps have been set yet.&r"
+no_permission_warp: "&#ff0000You do not own this warp!"
+
+# /rtp & /tpr messages
+rtp_success: "&#15ff00You have been teleported to a random location.&r"
+rtp_fail: "&#ff0000Could not find a safe location. Please try again.&r"
+
+# /spawm messages
+spawn_set: "&#15ff00Spawn point set!&r"
+spawn_teleported: "&#15ff00You have been teleported to spawn!&r"
+spawn_deleted: "&#15ff00Spawn point deleted!&r"
+
+# /help message
 help_message: "&#4385FFVersion &#6000FFv2.0.0&7. &#4385FFCommand list:&r\n
 &#4385FF/ctp help &7- &#6000FFshow corresponding message&r\n
 &#4385FF/ctp reload &7- &#6000FFreload configuration&r\n
@@ -37,29 +80,4 @@ help_message: "&#4385FFVersion &#6000FFv2.0.0&7. &#4385FFCommand list:&r\n
 &#4385FF/setspawn &7- &#6000FFset spawn&r\n
 &#4385FF/delspawn &7- &#6000FFdelete spawn&r\n
 \n&aModrinth - &#4385FF&nhttps://modrinth.com/plugin/cuboidteleport&r\n
-&7GitHub - &#4385FF&nhttps://github.com/camp3rcraft/Cuboid-Teleport&r"
-no_permission: "&#ff0000You don't have permission to use this command!&r"
-request_sent: "&#15ff00Teleport request sent to %target%.&r"
-request_received: "&#6000FF%sender%&r &#4385FFhas requested to teleport to you.&r\n&#4385FFType &#15ff00/tpaccept&r &#4385FFto accept or &#ff0000/tpacancel&r &#4385FFto deny.&r"
-request_timed_out: "&#ff0000Teleport request has timed out.&r"
-request_accepted: "&#15ff00Teleport request accepted.&r"
-request_denied: "&#ff0000Teleport request denied.&r"
-no_pending_request: "&#ff0000You have no pending teleport requests.&r"
-request_pending: "&#ff0000You already have a pending teleport request.&r"
-sender_offline: "&#ff0000The player who sent the request is no longer online.&r"
-request_cancelled: "&#ff0000Teleport request from %sender% has been cancelled.&r"
-rtp_success: "&#15ff00You have been teleported to a random location.&r"
-rtp_fail: "&#ff0000Could not find a safe location. Please try again.&r"
-warp_set: "&#15ff00Warp %warp% has been set.&r"
-warp_exists: "&#ff0000Warp %warp% already exists.&r"
-warp_not_found: "&#ff0000Warp %warp% not found.&r"
-warp_teleport: "&#15ff00Teleported to warp %warp%.&r"
-warp_deleted: "&#15ff00Warp %warp% has been deleted.&r"
-usage_setwarp: "&#ff0000Usage: &n/setwarp [name]&r"
-usage_warp: "&#ff0000Usage: &n/warp [name]&r"
-usage_delwarp: "&#ff0000Usage: &n/delwarp [name]&r"
-warps_list: "&#4385FFAvailable warps: &#6000FF&n%warps%&r"
-no_warps: "&#ff0000No warps have been set yet.&r"
-cooldown_active: "&#ff0000You can use %command% in %time% seconds."
-no_permission_home: "&#ff0000You do not own this home!"
-no_permission_warp: "&#ff0000You do not own this warp!"
+&7GitHub - &#4385FF&nhttps://github.com/camp3rcraft/Cuboid-Teleport&r\n"

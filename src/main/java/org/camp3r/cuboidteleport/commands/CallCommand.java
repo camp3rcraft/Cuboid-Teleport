@@ -40,7 +40,6 @@ public class CallCommand implements CommandExecutor {
 
         if (args.length != 1) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("usage_call")));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 
@@ -48,7 +47,6 @@ public class CallCommand implements CommandExecutor {
 
         if (target == null) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("player_not_found")));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 

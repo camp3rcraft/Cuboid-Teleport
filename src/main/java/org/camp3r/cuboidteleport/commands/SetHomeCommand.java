@@ -29,7 +29,6 @@ public class SetHomeCommand implements CommandExecutor {
         String homeName = (args.length > 0) ? args[0] : "default";
         homeSystem.setHome(player, homeName, location);
         player.sendMessage(localizationManager.getMessage("home_set", "home", homeName));
-        localizationManager.playSound(player, "general_sound");
         return true;
     }
 }

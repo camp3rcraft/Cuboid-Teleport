@@ -28,7 +28,8 @@ public class CuboidTeleport extends JavaPlugin {
         warpManager = new WarpManager(getDataFolder());
         CooldownManager cooldownManager = new CooldownManager(this);
         SpawnManager spawnManager = new SpawnManager(this);
-        getLogger().info(ColorUtil.color("&#6000FFC&#5E0AFFu&#5C14FFb&#591FFFo&#5729FFi&#5533FFd&#533DFFT&#5048FFe&#4E52FFl&#4C5CFFe&#4A66FFp&#4771FFo&#457BFFr&#4385FFt v2.0.0&r &#09ff00enabled.&r"));
+        getLogger().info(ColorUtil.color("CuboidTeleport v2.0.0 enabled! -- by camper_crafting"));
+        getLogger().info(ColorUtil.color("&cWARNING! You are using the beta version of plugin. This version contains bugs and errors!"));
 
         int teleportRadius = getConfig().getInt("teleport_radius", 1000);
         getCommand("sethome").setExecutor(new SetHomeCommand(homeSystem, localizationManager));
@@ -58,7 +59,7 @@ public class CuboidTeleport extends JavaPlugin {
         if (homeSystem != null) {
             homeSystem.saveHomes();
         }
-        getLogger().info(ColorUtil.color("&#6000FFC&#5E0AFFu&#5C14FFb&#591FFFo&#5729FFi&#5533FFd&#533DFFT&#5048FFe&#4E52FFl&#4C5CFFe&#4A66FFp&#4771FFo&#457BFFr&#4385FFt v2.0.0&r &#ff0000disabled.&r"));
+        getLogger().info(ColorUtil.color("CuboidTeleport v2.0.0 disabled. Thanks for using!"));
     }
 
     public HomeSystem getHomeSystem() {

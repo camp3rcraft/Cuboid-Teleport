@@ -45,7 +45,6 @@ public class RtpCommand implements CommandExecutor {
 
         if (!player.hasPermission("ctp.rtp")) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("no_permission")));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 

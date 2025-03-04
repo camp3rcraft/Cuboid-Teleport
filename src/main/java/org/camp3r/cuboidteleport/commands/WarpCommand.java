@@ -43,13 +43,11 @@ public class WarpCommand implements CommandExecutor {
 
         if (!player.hasPermission("ctp.warp")) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("no_permission")));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 
         if (args.length != 1) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("usage_warp")));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 
@@ -58,7 +56,6 @@ public class WarpCommand implements CommandExecutor {
 
         if (location == null) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("warp_not_found", "warp", warpName)));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 

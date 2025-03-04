@@ -45,7 +45,6 @@ public class TprCommand implements CommandExecutor {
 
         if (!player.hasPermission("ctp.tpr")) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("no_permission")));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 
@@ -62,7 +61,6 @@ public class TprCommand implements CommandExecutor {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("rtp_success")));
         } else {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("rtp_fail")));
-            localizationManager.playSound(player, "general_sound");
         }
 
         return true;

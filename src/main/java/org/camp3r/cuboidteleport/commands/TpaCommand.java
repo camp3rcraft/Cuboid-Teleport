@@ -40,7 +40,6 @@ public class TpaCommand implements CommandExecutor {
 
         if (args.length != 1) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("usage_tpa")));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 

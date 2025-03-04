@@ -30,13 +30,11 @@ public class SetWarpCommand implements CommandExecutor {
 
         if (!player.hasPermission("ctp.setwarp")) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("no_permission")));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 
         if (args.length != 1) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("usage_setwarp")));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 
@@ -45,10 +43,8 @@ public class SetWarpCommand implements CommandExecutor {
 
         if (warpManager.setWarp(warpName, location)) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("warp_set", "warp", warpName)));
-            localizationManager.playSound(player, "general_sound");
         } else {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("warp_exists", "warp", warpName)));
-            localizationManager.playSound(player, "general_sound");
         }
 
         return true;

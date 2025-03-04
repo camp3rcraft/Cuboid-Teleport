@@ -32,7 +32,6 @@ public class WarpsCommand implements CommandExecutor {
 
         if (!player.hasPermission("ctp.warps")) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("no_permission")));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 
@@ -40,13 +39,11 @@ public class WarpsCommand implements CommandExecutor {
 
         if (warpNames.isEmpty()) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("no_warps")));
-            localizationManager.playSound(player, "general_sound");
             return true;
         }
 
         String warpsList = warpNames.stream().collect(Collectors.joining(", "));
         player.sendMessage(ColorUtil.color(localizationManager.getMessage("warps_list", "warps", warpsList)));
-        localizationManager.playSound(player, "general_sound");
         return true;
     }
 }

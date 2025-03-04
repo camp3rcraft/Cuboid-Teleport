@@ -24,14 +24,21 @@ public class DelHomeCommand implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-        String homeName = args[0];
-        if (!homeSystem.isOwner(player, homeName)) {
-            player.sendMessage(localizationManager.getMessage("no_permission_home"));
+
+        if (args.length != 1) {
+            player.sendMessage(localizationManager.getMessage("usage_delhome"));
             return true;
         }
 
+        String homeName = args[0];
+
         if (!homeSystem.hasHome(player, homeName)) {
             player.sendMessage(localizationManager.getMessage("home_not_exist", "home", homeName));
+            return true;
+        }
+
+        if (!homeSystem.isOwner(player, homeName)) {
+            player.sendMessage(localizationManager.getMessage("no_permission_home"));
             return true;
         }
 
@@ -39,10 +46,8 @@ public class DelHomeCommand implements CommandExecutor {
 
         if (homeSystem.removeHome(player, homeName)) {
             player.sendMessage(localizationManager.getMessage("home_removed", "home", homeName));
-            localizationManager.playSound(player, "general_sound");
         } else {
             player.sendMessage(localizationManager.getMessage("home_not_exist", "home", homeName));
-            localizationManager.playSound(player, "general_sound");
         }
         return true;
     }
