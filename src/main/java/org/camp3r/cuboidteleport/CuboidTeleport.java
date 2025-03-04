@@ -48,9 +48,9 @@ public class CuboidTeleport extends JavaPlugin {
         getCommand("warp").setExecutor(new WarpCommand(warpManager, localizationManager, cooldownManager, this));
         getCommand("delwarp").setExecutor(new DelWarpCommand(warpManager, localizationManager));
         getCommand("warps").setExecutor(new WarpsCommand(warpManager, localizationManager));
-        getCommand("spawn").setExecutor(new SpawnCommand(spawnManager));
-        getCommand("setspawn").setExecutor(new SetSpawnCommand(spawnManager));
-        getCommand("delspawn").setExecutor(new DelSpawnCommand(spawnManager));
+        getCommand("spawn").setExecutor(new SpawnCommand(spawnManager, localizationManager));
+        getCommand("setspawn").setExecutor(new SetSpawnCommand(spawnManager, localizationManager));
+        getCommand("delspawn").setExecutor(new DelSpawnCommand(spawnManager, localizationManager));
         getServer().getPluginManager().registerEvents(new SpawnListener(spawnManager), this);
     }
 
