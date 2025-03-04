@@ -26,6 +26,10 @@ public class SpawnCommand implements CommandExecutor {
 
         Player player = (Player) sender;
         Location spawn = spawnManager.getSpawnLocation();
+        if (spawn == null) {
+            player.sendMessage(localizationManager.getMessage("spawn_not_set"));
+            return true;
+        }
         player.teleport(spawn);
         player.sendMessage(localizationManager.getMessage("spawn_teleported"));
         return true;

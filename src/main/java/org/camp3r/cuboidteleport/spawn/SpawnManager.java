@@ -52,8 +52,8 @@ public class SpawnManager {
     }
 
     public Location getSpawnLocation() {
-        if (!hasSpawn()) {
-            return Bukkit.getWorlds().get(0).getSpawnLocation(); // По умолчанию – мировой спавн
+        if (!spawnConfig.contains("spawn")) {
+            return null; // Теперь возвращаем `null`, если спавн не установлен
         }
         return (Location) spawnConfig.get("spawn");
     }

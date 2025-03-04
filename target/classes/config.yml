@@ -1,16 +1,16 @@
-#                                                                      #
-# ▒█▀▀█ █░░█ █▀▀▄ █▀▀█ ░▀░ █▀▀▄ ▀▀█▀▀ █▀▀ █░░ █▀▀ █▀▀█ █▀▀█ █▀▀█ ▀▀█▀▀ #
-# ▒█░░░ █░░█ █▀▀▄ █░░█ ▀█▀ █░░█ ░▒█░░ █▀▀ █░░ █▀▀ █░░█ █░░█ █▄▄▀ ░░█░░ #
-# ▒█▄▄█ ░▀▀▀ ▀▀▀░ ▀▀▀▀ ▀▀▀ ▀▀▀░ ░▒█░░ ▀▀▀ ▀▀▀ ▀▀▀ █▀▀▀ ▀▀▀▀ ▀░▀▀ ░░▀░░ #
-#                               v2.0.0                                 #
-#                         by camper_crafting                           #
-#                                                                      #
+#
+# ▒█▀▀█ █░░█ █▀▀▄ █▀▀█ ░▀░ █▀▀▄ ▀▀█▀▀ █▀▀ █░░ █▀▀ █▀▀█ █▀▀█ █▀▀█ ▀▀█▀▀
+# ▒█░░░ █░░█ █▀▀▄ █░░█ ▀█▀ █░░█ ░▒█░░ █▀▀ █░░ █▀▀ █░░█ █░░█ █▄▄▀ ░░█░░
+# ▒█▄▄█ ░▀▀▀ ▀▀▀░ ▀▀▀▀ ▀▀▀ ▀▀▀░ ░▒█░░ ▀▀▀ ▀▀▀ ▀▀▀ █▀▀▀ ▀▀▀▀ ▀░▀▀ ░░▀░░
+#                               v2.0.0
+#                         by camper_crafting
+#
 
 # Main settings of plugin
-locale: en
+locale: en # This plugin has Russian (ru) and English (en) languages
+update_check: true
 message_prefix: "&#6000FF&lC&#5E0AFF&lu&#5C14FF&lb&#591FFF&lo&#5729FF&li&#5533FF&ld&#533DFF&lT&#5048FF&le&#4E52FF&ll&#4C5CFF&le&#4A66FF&lp&#4771FF&lo&#457BFF&lr&#4385FF&lt&r &7|&r "
 general_sound: ENTITY_FISHING_BOBBER_THROW
-
 
 # Home settings
 home_sound: ENTITY_ENDERMAN_TELEPORT

@@ -43,10 +43,16 @@ public class CallCommand implements CommandExecutor {
             return true;
         }
 
-        Player target = Bukkit.getPlayer(args[0]);
+        Player target = null;
+        for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+            if (onlinePlayer.getName().equalsIgnoreCase(args[0])) {
+                target = onlinePlayer;
+                break;
+            }
+        }
 
         if (target == null) {
-            player.sendMessage(ColorUtil.color(localizationManager.getMessage("player_not_found")));
+            player.sendMessage(localizationManager.getMessage("player_not_found"));
             return true;
         }
 

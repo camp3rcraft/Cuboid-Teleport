@@ -43,7 +43,13 @@ public class TpaCommand implements CommandExecutor {
             return true;
         }
 
-        Player target = Bukkit.getPlayerExact(args[0]);
+        Player target = null;
+        for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+            if (onlinePlayer.getName().equalsIgnoreCase(args[0])) {
+                target = onlinePlayer;
+                break;
+            }
+        }
 
         if (target == null) {
             player.sendMessage(localizationManager.getMessage("player_not_found"));

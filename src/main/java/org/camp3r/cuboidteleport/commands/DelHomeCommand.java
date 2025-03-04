@@ -23,6 +23,7 @@ public class DelHomeCommand implements CommandExecutor {
             sender.sendMessage(localizationManager.getMessage("only_players"));
             return true;
         }
+
         Player player = (Player) sender;
 
         if (args.length != 1) {
@@ -44,7 +45,7 @@ public class DelHomeCommand implements CommandExecutor {
 
         boolean deleted = homeSystem.removeHome(player, homeName);
 
-        if (homeSystem.removeHome(player, homeName)) {
+        if (deleted) {
             player.sendMessage(localizationManager.getMessage("home_removed", "home", homeName));
         } else {
             player.sendMessage(localizationManager.getMessage("home_not_exist", "home", homeName));

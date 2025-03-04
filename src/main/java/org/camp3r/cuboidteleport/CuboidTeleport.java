@@ -9,6 +9,7 @@ import org.camp3r.cuboidteleport.listeners.SpawnListener;
 import org.camp3r.cuboidteleport.spawn.SpawnManager;
 import org.camp3r.cuboidteleport.utils.ColorUtil;
 import org.camp3r.cuboidteleport.utils.CooldownManager;
+import org.camp3r.cuboidteleport.utils.UpdateChecker;
 import org.camp3r.cuboidteleport.warp.WarpManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -30,12 +31,14 @@ public class CuboidTeleport extends JavaPlugin {
         SpawnManager spawnManager = new SpawnManager(this);
         getLogger().info(ColorUtil.color("CuboidTeleport v2.0.0 enabled! -- by camper_crafting"));
         getLogger().info(ColorUtil.color("&cWARNING! You are using the beta version of plugin. This version contains bugs and errors!"));
+        new UpdateChecker(this).checkForUpdates();
 
         int teleportRadius = getConfig().getInt("teleport_radius", 1000);
         getCommand("sethome").setExecutor(new SetHomeCommand(homeSystem, localizationManager));
         getCommand("home").setExecutor(new HomeCommand(homeSystem, localizationManager, cooldownManager, this));
         getCommand("home").setTabCompleter(new HomeTabCompleter(homeSystem));
         getCommand("delhome").setExecutor(new DelHomeCommand(homeSystem, localizationManager));
+        getCommand("delhome").setTabCompleter(new DelHomeTabCompleter(homeSystem));
         getCommand("ctp").setExecutor(new CtpCommand(this));
         getCommand("tpa").setExecutor(new TpaCommand(teleportManager, localizationManager, cooldownManager));
         getCommand("call").setExecutor(new CallCommand(teleportManager, localizationManager, cooldownManager));

@@ -53,13 +53,16 @@ public class HomeSystem {
     }
 
     public boolean removeHome(Player player, String homeName) {
-        UUID playerId = player.getUniqueId();
-        Map<String, Location> playerHomes = homes.get(playerId);
-        if (playerHomes != null && playerHomes.remove(homeName) != null) {
-            saveHomes();
-            return true;
+        String path = player.getUniqueId().toString() + "." + homeName;
+
+        if (!homesConfig.contains(path)) {
+            return false; // Дом не найден
         }
-        return false;
+
+        homesConfig.set(path, null);
+        saveHomes();
+
+        return !homesConfig.contains(path);
     }
 
     public boolean isOwner(Player player, String homeName) {

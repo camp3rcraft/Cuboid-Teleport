@@ -55,6 +55,7 @@ rtp_fail: "&#ff0000Could not find a safe location. Please try again.&r"
 
 # /spawm messages
 spawn_set: "&#15ff00Spawn point set!&r"
+spawn_not_set: "&#ff0000Spawn is not yet set on this server."
 spawn_teleported: "&#15ff00You have been teleported to spawn!&r"
 spawn_deleted: "&#15ff00Spawn point deleted!&r"
 

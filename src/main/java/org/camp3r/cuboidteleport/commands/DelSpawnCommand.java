@@ -23,6 +23,11 @@ public class DelSpawnCommand implements CommandExecutor {
             return true;
         }
 
+        if (!spawnManager.hasSpawn()) {
+            sender.sendMessage(localizationManager.getMessage("spawn_not_set"));
+            return true;
+        }
+
         spawnManager.deleteSpawn();
         sender.sendMessage(localizationManager.getMessage("spawn_deleted"));
         return true;
