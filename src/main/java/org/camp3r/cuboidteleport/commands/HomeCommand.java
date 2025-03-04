@@ -12,6 +12,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.List;
+
 public class HomeCommand implements CommandExecutor {
 
     private final HomeSystem homeSystem;
@@ -34,10 +36,38 @@ public class HomeCommand implements CommandExecutor {
         }
 
         Player player = (Player) sender;
+        String homeName = args.length > 0 ? args[0] : "home";
+        Location homeLocation = homeSystem.getHome(player, homeName);
+
+        if (args.length > 0) {
+            homeName = args[0];
+        } else {
+            // Если аргумента нет, пытаемся выбрать дом автоматически
+            List<String> homes = homeSystem.getHomes(player);
+            if (homes.isEmpty()) {
+                player.sendMessage(localizationManager.getMessage("home_not_exist"));
+                return true;
+            } else if (homes.size() == 1) {
+                homeName = homes.get(0); // Если только один дом, выбираем его
+            } else {
+                player.sendMessage(localizationManager.getMessage("home_specify"));
+                return true;
+            }
+        }
+
+        if (!homeSystem.hasHome(player, homeName)) {
+            player.sendMessage(localizationManager.getMessage("home_not_exist", "home", homeName));
+            return true;
+        }
 
         if (cooldownManager.isOnCooldown(player, "home")) {
             long timeLeft = cooldownManager.getCooldownTimeLeft(player, "home");
             player.sendMessage(localizationManager.getMessage("cooldown_active", "command", "/home", "time", String.valueOf(timeLeft)));
+            return true;
+        }
+
+        if (!homeSystem.isOwner(player, homeName)) {
+            player.sendMessage(localizationManager.getMessage("no_permission_home"));
             return true;
         }
 
@@ -46,9 +76,6 @@ public class HomeCommand implements CommandExecutor {
             localizationManager.playSound(player, "general_sound");
             return true;
         }
-
-        String homeName = args.length > 0 ? args[0] : "home";
-        Location homeLocation = homeSystem.getHome(player, homeName);
 
         if (homeLocation == null) {
             player.sendMessage(ColorUtil.color(localizationManager.getMessage("home_not_exist", "%home%", homeName)));

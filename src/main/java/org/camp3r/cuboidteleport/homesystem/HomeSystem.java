@@ -7,9 +7,7 @@ import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class HomeSystem {
 
@@ -68,6 +66,10 @@ public class HomeSystem {
         return homesConfig.contains(player.getUniqueId().toString() + "." + homeName);
     }
 
+    public boolean hasHome(Player player, String homeName) {
+        return homesConfig.contains(player.getUniqueId().toString() + "." + homeName);
+    }
+
     public void saveHomes() {
         for (Map.Entry<UUID, Map<String, Location>> entry : homes.entrySet()) {
             UUID playerId = entry.getKey();
@@ -106,5 +108,15 @@ public class HomeSystem {
             }
             homes.put(playerId, homeMap);
         }
+    }
+
+    public List<String> getHomes(Player player) {
+        String playerPath = player.getUniqueId().toString();
+
+        if (!homesConfig.contains(playerPath)) {
+            return new ArrayList<>();
+        }
+
+        return new ArrayList<>(homesConfig.getConfigurationSection(playerPath).getKeys(false));
     }
 }

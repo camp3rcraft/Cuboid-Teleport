@@ -72,8 +72,7 @@ public class WarpManager {
     }
 
     public boolean isOwner(Player player, String warpName) {
-        String ownerPath = "warps." + warpName + ".owner";
-        return warpsConfig.getString(ownerPath, "").equals(player.getUniqueId().toString());
+        return warpsConfig.getString("warps." + warpName + ".owner", "").equals(player.getUniqueId().toString());
     }
 
 

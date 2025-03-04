@@ -2,6 +2,7 @@ package org.camp3r.cuboidteleport;
 
 import org.camp3r.cuboidteleport.commands.*;
 import org.camp3r.cuboidteleport.homesystem.HomeSystem;
+import org.camp3r.cuboidteleport.homesystem.HomeTabCompleter;
 import org.camp3r.cuboidteleport.homesystem.LocalizationManager;
 import org.camp3r.cuboidteleport.homesystem.TeleportManager;
 import org.camp3r.cuboidteleport.listeners.SpawnListener;
@@ -32,6 +33,7 @@ public class CuboidTeleport extends JavaPlugin {
         int teleportRadius = getConfig().getInt("teleport_radius", 1000);
         getCommand("sethome").setExecutor(new SetHomeCommand(homeSystem, localizationManager));
         getCommand("home").setExecutor(new HomeCommand(homeSystem, localizationManager, cooldownManager, this));
+        getCommand("home").setTabCompleter(new HomeTabCompleter(homeSystem));
         getCommand("delhome").setExecutor(new DelHomeCommand(homeSystem, localizationManager));
         getCommand("ctp").setExecutor(new CtpCommand(this));
         getCommand("tpa").setExecutor(new TpaCommand(teleportManager, localizationManager, cooldownManager));

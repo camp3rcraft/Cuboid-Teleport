@@ -44,11 +44,10 @@ public class TpaCommand implements CommandExecutor {
             return true;
         }
 
-        Player target = Bukkit.getPlayer(args[0]);
+        Player target = Bukkit.getPlayerExact(args[0]);
 
         if (target == null) {
-            player.sendMessage(ColorUtil.color(localizationManager.getMessage("player_not_found")));
-            localizationManager.playSound(player, "general_sound");
+            player.sendMessage(localizationManager.getMessage("player_not_found"));
             return true;
         }
 

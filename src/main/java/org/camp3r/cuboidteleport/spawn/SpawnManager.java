@@ -48,10 +48,13 @@ public class SpawnManager {
     }
 
     public boolean hasSpawn() {
-        return spawnLocation != null;
+        return spawnConfig.contains("spawn");
     }
 
     public Location getSpawnLocation() {
-        return spawnLocation != null ? spawnLocation : Bukkit.getWorlds().get(0).getSpawnLocation();
+        if (!hasSpawn()) {
+            return Bukkit.getWorlds().get(0).getSpawnLocation(); // По умолчанию – мировой спавн
+        }
+        return (Location) spawnConfig.get("spawn");
     }
 }

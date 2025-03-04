@@ -49,11 +49,9 @@ public class DelWarpCommand implements CommandExecutor {
         boolean deleted = warpManager.deleteWarp(warpName);
 
         if (warpManager.deleteWarp(warpName)) {
-            player.sendMessage(ColorUtil.color(localizationManager.getMessage("warp_deleted", "warp", warpName)));
-            localizationManager.playSound(player, "general_sound");
+            player.sendMessage(localizationManager.getMessage("warp_deleted", "warp", warpName));
         } else {
-            player.sendMessage(ColorUtil.color(localizationManager.getMessage("warp_not_found", "warp", warpName)));
-            localizationManager.playSound(player, "general_sound");
+            player.sendMessage(localizationManager.getMessage("warp_not_found", "warp", warpName));
         }
 
         return true;
