@@ -148,7 +148,7 @@ ____
 - `/homes [name]` - show homes of player. Without name - show your homes
 - Safe teleports for warps and homes
 - `/warppass <set, del, show> [warp] [password] [repeat password]` - setup a password for warp
-- Tab completes for warps and homes
+- ✅Tab completes for warps and homes
 - Visitors counts in `/warps`
 - `/warpowner [warp] [name]` - transfer ownership of the warp to another player
 - `/warpinfo [warp]` - show info about warp: ownet, visitors count, coordinates and world, create data
