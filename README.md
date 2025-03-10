@@ -1,7 +1,8 @@
 ![Description Banner](https://cdn.modrinth.com/data/cached_images/7d6e51470784fc941419b901df5df8f2bcaf5f15_0.webp)
 # 💨A simple plugin that adds teleports
-## ⚠️Attention server owners!
-A critical bug has been discovered in CuboidTeleport that allows players to delete even warps that are not their own. As for the house points, I don’t know yet whether the bug applies to them as well. Temporarily remove access to `/delwarp` and `/delhome`. Fix coming soon + new functions as compensation
+Add those familiar teleports without unnecessary load with simplicity. Give players the ability to move around the server world easily and quickly!
+
+**ℹ️For RTP it is recommended to use the [Chunky](https://modrinth.com/plugin/chunky) plugin so that the server does not hang with each random teleportation**
 
 ![https://img.shields.io/badge/Release_version-v1.2.1-7642f7](https://img.shields.io/badge/Release_version-v1.2.1-7642f7)
 ![https://img.shields.io/badge/Minecraft-1.16.5-665efa](https://img.shields.io/badge/Minecraft-1.16.5-665efa)
