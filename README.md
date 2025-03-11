@@ -5,7 +5,7 @@ Add those familiar teleports without unnecessary load with simplicity. Give play
 **ℹ️For RTP it is recommended to use the [Chunky](https://modrinth.com/plugin/chunky) plugin so that the server does not hang with each random teleportation**
 
 ![https://img.shields.io/badge/Release_version-v1.2.1-7642f7](https://img.shields.io/badge/Release_version-v1.2.1-7642f7)
-![https://img.shields.io/badge/Minecraft-1.16.5-665efa](https://img.shields.io/badge/Minecraft-1.16.5-665efa)
+![https://img.shields.io/badge/Minecraft_Paper-1.16.5_--_1.21.4-665efa](https://img.shields.io/badge/Minecraft_Paper-1.16.5_--_1.21.4-665efa)
 [![Static Badge](https://img.shields.io/badge/GitHub-Source_code-4a58e6)](https://github.com/camp3rcraft/Cuboid-Teleport/)
 ![https://img.shields.io/badge/Documentation-Soon...-2b77fc](https://img.shields.io/badge/Documentation-Soon...-2b77fc)
 [![Static Badge](https://img.shields.io/badge/Issue-Open-007af8)](https://github.com/camp3rcraft/Cuboid-Teleport/issues)
@@ -13,7 +13,14 @@ Add those familiar teleports without unnecessary load with simplicity. Give play
 ![Features](https://cdn.modrinth.com/data/cached_images/195d904a205f68dee2a256e138874fdbba12c103_0.webp)
 
 - HEX Color (RGB) support
+- Personal points of each player's houses
+- Warp installation and warp teleportation
+- Random teleportations with radius settings _(I highly recommend using [Chunky](https://modrinth.com/plugin/chunky) so that the server doesn't go down)_
+- Teleportation between players on request
+- Permissions
+- Reload configuration without restarting the server
 - Custom config.yml
+- /help message
 - Customisable localization - Russian and English
 - Very simple and non-loading plugin
 
