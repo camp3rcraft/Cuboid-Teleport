@@ -1,16 +1,24 @@
-[![Description Banner](https://i.ibb.co/7tRvNf1x/banner.png)](https://modrinth.com/plugin/cuboidteleport)
-# **💨A simple plugin that adds teleports**
-## ⚠️Attention server owners!
-A critical bug has been discovered in CuboidTeleport that allows players to delete even warps that are not their own. As for the house points, I don’t know yet whether the bug applies to them as well. Temporarily remove access to `/delwarp` and `/delhome`. Fix coming soon + new functions as compensation
+![Description Banner](https://cdn.modrinth.com/data/cached_images/7d6e51470784fc941419b901df5df8f2bcaf5f15_0.webp)
+# 💨A simple plugin that adds teleports
+Add those familiar teleports without unnecessary load with simplicity. Give players the ability to move around the server world easily and quickly!
 
+**ℹ️For RTP it is recommended to use the [Chunky](https://modrinth.com/plugin/chunky) plugin so that the server does not hang with each random teleportation**
 
-**✨Features:**
-- HEX Color support
+![https://img.shields.io/badge/Release_version-v1.2.1-7642f7](https://img.shields.io/badge/Release_version-v1.2.1-7642f7)
+![https://img.shields.io/badge/Minecraft-1.16.5-665efa](https://img.shields.io/badge/Minecraft-1.16.5-665efa)
+[![Static Badge](https://img.shields.io/badge/GitHub-Source_code-4a58e6)](https://github.com/camp3rcraft/Cuboid-Teleport/)
+![https://img.shields.io/badge/Documentation-Soon...-2b77fc](https://img.shields.io/badge/Documentation-Soon...-2b77fc)
+[![Static Badge](https://img.shields.io/badge/Issue-Open-007af8)](https://github.com/camp3rcraft/Cuboid-Teleport/issues)
+
+![Features](https://cdn.modrinth.com/data/cached_images/195d904a205f68dee2a256e138874fdbba12c103_0.webp)
+
+- HEX Color (RGB) support
 - Custom config.yml
 - Customisable localization - Russian and English
 - Very simple and non-loading plugin
 
-**🏗️Commands:**
+![Commands](https://cdn.modrinth.com/data/cached_images/6fddfdae648575f1f471fd4361975dffabecd45b_0.webp)
+
 - `/home [name]` - teleport on home
 - `/sethome [name]` - set home
 - `/delhome [name]` - remove home
@@ -28,7 +36,13 @@ A critical bug has been discovered in CuboidTeleport that allows players to dele
 - `/ctp help` - shows commands list
 - `/ctp reload` - reload configuration
 
-**⚙️config.yml preview:**
+![Configs](https://cdn.modrinth.com/data/cached_images/353bf7b863d1e3819461b13e68001d70ccb8beeb_0.webp)
+
+🌈**How to create gradient** - https://www.birdflop.com/resources/rgb/
+
+<details>
+<summary>config.yml</summary>
+  
 ```
 #                                                                      #
 # ▒█▀▀█ █░░█ █▀▀▄ █▀▀█ ░▀░ █▀▀▄ ▀▀█▀▀ █▀▀ █░░ █▀▀ █▀▀█ █▀▀█ █▀▀█ ▀▀█▀▀ #
@@ -58,9 +72,11 @@ teleport_radius: 1000 # RTP radius
 tpa_sound: ENTITY_ENDERMAN_TELEPORT
 ```
 
-### **🌈How to create gradient - https://www.birdflop.com/resources/rgb/**
+</details>
 
-**🇬🇧msg_en.yml preview:**
+<details>
+<summary>msg_en.yml</summary>
+  
 ```
 #                                                                      #
 # ▒█▀▀█ █░░█ █▀▀▄ █▀▀█ ░▀░ █▀▀▄ ▀▀█▀▀ █▀▀ █░░ █▀▀ █▀▀█ █▀▀█ █▀▀█ ▀▀█▀▀ #
@@ -121,7 +137,14 @@ warps_list: "&#4385FFAvailable warps: &#6000FF&n%warps%&r"
 no_warps: "&#ff0000No warps have been set yet.&r"
 ```
 
-**📃TODO list:**
+</details>
+
+![TODO list](https://cdn.modrinth.com/data/cached_images/0dac029ebad387f61026bca464d9295c6b0fe8de_0.webp)
+
+<details>
+<summary>TODO</summary>
+
+**📃TODO  list:**
 - ✅ - *ready, not released*
 - ✅✅ - *ready, released*
 
@@ -148,10 +171,12 @@ ____
 - `/homes [name]` - show homes of player. Without name - show your homes
 - Safe teleports for warps and homes
 - `/warppass <set, del, show> [warp] [password] [repeat password]` - setup a password for warp
-- Tab completes for warps and homes
+- ✅Tab completes for warps and homes
 - Visitors counts in `/warps`
 - `/warpowner [warp] [name]` - transfer ownership of the warp to another player
 - `/warpinfo [warp]` - show info about warp: ownet, visitors count, coordinates and world, create data
 - Respawn players on the oldest home
 - `/homeinfo [home]` - show info about home: teleports counts, create data, owners
 - `/homeowner <add, del, show> [home] [name]` - add owner to home
+
+</details>
