@@ -30,7 +30,7 @@ public class CuboidTeleport extends JavaPlugin {
         CooldownManager cooldownManager = new CooldownManager(this);
         SpawnManager spawnManager = new SpawnManager(this);
         getLogger().info(ColorUtil.color("CuboidTeleport v2.0.0 enabled! -- by camper_crafting"));
-        getLogger().info(ColorUtil.color("&cWARNING! You are using the beta version of plugin. This version contains bugs and errors!"));
+        getLogger().info(ColorUtil.color("WARNING! You are using the beta version of plugin. This version contains bugs and errors!"));
         new UpdateChecker(this).checkForUpdates();
 
         int teleportRadius = getConfig().getInt("teleport_radius", 1000);
@@ -41,6 +41,7 @@ public class CuboidTeleport extends JavaPlugin {
         getCommand("delhome").setTabCompleter(new DelHomeTabCompleter(homeSystem));
         getCommand("ctp").setExecutor(new CtpCommand(this));
         getCommand("tpa").setExecutor(new TpaCommand(teleportManager, localizationManager, cooldownManager));
+        getCommand("tpahere").setExecutor(new TpahereCommand(teleportManager, localizationManager));
         getCommand("call").setExecutor(new CallCommand(teleportManager, localizationManager, cooldownManager));
         getCommand("tpaccept").setExecutor(new TpacceptCommand(teleportManager, localizationManager, this));
         getCommand("tpacancel").setExecutor(new TpacancelCommand(teleportManager, localizationManager));

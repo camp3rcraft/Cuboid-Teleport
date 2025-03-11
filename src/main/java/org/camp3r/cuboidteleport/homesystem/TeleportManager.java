@@ -26,6 +26,14 @@ public class TeleportManager {
             return;
         }
 
+        public void sendTpahereRequest(Player sender, Player target) {
+            requests.put(target.getUniqueId(), sender);
+        }
+
+        public boolean hasPendingRequest(Player player) {
+            return requests.containsKey(player.getUniqueId());
+        }
+
         UUID senderId = sender.getUniqueId();
         UUID targetId = target.getUniqueId();
 

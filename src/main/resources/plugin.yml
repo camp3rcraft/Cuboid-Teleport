@@ -67,6 +67,10 @@ commands:
     description: Delete the spawn location
     usage: /delspawn
     permission: ctp.delspawn
+  tpahere:
+    description: Send a teleport request to bring a player to you
+    usage: /tpahere [player]
+    permission: ctp.tpahere
 permissions:
   ctp.sethome:
     description: Allows the player to set home locations.
@@ -125,3 +129,6 @@ permissions:
   ctp.delspawn:
     description: Allows deleting spawn
     default: op
+  ctp.tpahere:
+    description: Allows the player to send a teleport request to bring a player to you
+    default: true

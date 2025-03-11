@@ -16,9 +16,11 @@ cooldown_active: "&#ff0000Вы сможете использовать %command%
 # Сообщения /call & /tpa
 usage_call: "&#ff0000Использование: &n/call [игрок]&r"
 usage_tpa: "&#ff0000Использование: /tpa [игрок]&r"
+usage_tpahere: "&#ff0000Использование: &n/tpahere [игрок]&r"
 no_self_request: "&#ff0000Вы не можете отправить запрос на телепортацию самому себе.&r"
 request_sent: "&#15ff00Отправлен запрос на телепортацию игроку %target%.&r"
 request_received: "&#6000FF%sender%&r &#4385FFхочет телепортироваться к вам.&r\n&#4385FFВведите &#15ff00/tpaccept&r &#4385FFдля принятия или &#ff0000/tpacancel&r &#4385FFдля отклонения.&r"
+tpahere_received: "&#6000FF%sender%&r &#4385FFхочет, чтобы вы телепортировались к нему.&#4385FF Введите &#15ff00/tpaccept&r &#4385FFдля принятия или &#ff0000/tpacancel&r &#4385FFдля отклонения.&r"
 request_timed_out: "&#ff0000Запрос на телепортацию истек.&r"
 request_accepted: "&#15ff00Запрос на телепортацию принят.&r"
 request_denied: "&#ff0000Запрос на телепортацию отклонен.&r"
